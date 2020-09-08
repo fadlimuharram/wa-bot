@@ -1,8 +1,7 @@
-import { Router } from 'express';
-import WhatsappBot from '../controllers/WhatsappBot';
+const botRouter = require('express').Router();
+const WhatsappBot = require('../controllers/WhatsappBot');
 
-const botRouter = Router();
-
+botRouter.get('/hi', WhatsappBot.hi);
 botRouter.post('/incoming', WhatsappBot.exampleMsg);
 
-export default botRouter;
+module.exports = botRouter;

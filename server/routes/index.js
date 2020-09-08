@@ -1,7 +1,6 @@
-import { Router } from 'express';
-import botRouter from './botRoute';
+const v1Router = require('express').Router();
+const botRouter = require('./botRoute');
 
-const v1Router = Router();
 v1Router.use('/api/v1', botRouter);
 
-export default v1Router;
+module.exports = v1Router;

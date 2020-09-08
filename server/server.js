@@ -1,8 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import session from 'express-session';
-import v1Routes from './routes';
-
+const express = require('express');
+const cors = require('cors');
+const session = require('express-session');
+const v1Routes = require('./routes');
 const app = express();
 
 const { PORT = 3000 } = process.env;
@@ -35,6 +34,6 @@ app.use((err, req, res, next) => {
 	});
 });
 
-app.listen(PORT, () => console.log(`App Listening on port ${PORT}`));
+// app.listen(PORT, () => console.log(`App Listening on port ${PORT}`));
 
-export default app;
+module.exports = app;

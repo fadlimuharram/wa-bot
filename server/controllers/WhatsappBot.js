@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import twilio from 'twilio';
+const dotenv = require('dotenv');
+const twilio = require('twilio');
 dotenv.config();
 
 const { SID: accountSid, KEY: TwilloAuthToken } = process.env;
@@ -8,6 +8,11 @@ twilio(accountSid, TwilloAuthToken);
 const { MessagingResponse } = twilio.twiml;
 
 class WhatsappBot {
+	static async hi(req, res, next) {
+		return res.status(200).send({
+			message: 'hello world',
+		});
+	}
 	static async exampleMsg(req, res, next) {
 		const twiml = new MessagingResponse();
 		const q = req.body.Body;
@@ -40,4 +45,4 @@ class WhatsappBot {
 	}
 }
 
-export default WhatsappBot;
+module.exports = WhatsappBot;
