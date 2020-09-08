@@ -5,27 +5,23 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "babel-node server/server.js",
-		"deploy": "serverless deploy"
+		"deploy": "serverless deploy",
+		"test": "serverless-bundle test"
 	},
 	"author": "Ekpang Michael",
 	"license": "ISC",
-	"dependencies": {
-		"aws-serverless-express": "^3.3.8",
-		"cors": "2.8.5",
-		"dotenv": "8.0.0",
-		"express": "^4.16.3",
-		"express-session": "^1.17.1",
-		"googleapis": "^42.0.0",
-		"moment": "^2.27.0",
-		"twilio": "^4.6.0"
-	},
 	"devDependencies": {
-		"@babel/cli": "7.5.5",
-		"@babel/core": "7.5.5",
-		"@babel/node": "^7.5.5",
-		"@babel/preset-env": "^7.5.5"
+		"aws-sdk": "^2.655.0",
+		"jest": "^25.2.7",
+		"serverless-bundle": "^1.3.3",
+		"serverless-dotenv-plugin": "^2.3.2",
+		"serverless-offline": "^6.1.4"
 	},
 	"engines": {
 		"node": "12.x"
+	},
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"twilio": "^3.49.1"
 	}
 }
